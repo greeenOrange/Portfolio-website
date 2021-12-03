@@ -23,3 +23,18 @@ $(window).scroll(function() {
     }
   });
 });
+
+$( ".Bar" ).each(function() {
+  let percent = $(this).attr('data-value');
+  percent = percent * 100 / 100;
+  
+  //For too high values :
+  if(percent > 100){
+    percent = 100;
+  }
+  
+  //$(this).css('width', percent+'%' );
+  
+  //With animation as asked :
+    $(this).animate({width: percent+'%' }, 2000);
+});
